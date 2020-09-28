@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=Escrima-X29-Kamui-LightningBlade-PurpleLightning
+kernel.string=someKernel-X1
 do.devicecheck=1
 do.modules=0
 do.systemless=1
