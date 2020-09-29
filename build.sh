@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Custom build script for Escrima Kernel
+# Custom build script for someKernel
 
 # Constants
 green='\033[01;32m'
@@ -16,7 +16,7 @@ KERNEL_DIR=$PWD
 Anykernel_DIR=$KERNEL_DIR/AnyKernel3/
 DATE=$(date +"%d%m%Y")
 TIME=$(date +"-%H.%M.%S")
-KERNEL_NAME="someKernel-X1"
+KERNEL_NAME="someKernel-X1.1"
 DEVICE="-kenzo-"
 FINAL_ZIP="$KERNEL_NAME""$DEVICE""$DATE""$TIME"
 
@@ -31,20 +31,20 @@ rm -rf arch/arm64/boot/Image.gz
 rm -rf arch/arm64/boot/Image.gz-dtb
 
 # Export few variables
-export KBUILD_BUILD_USER="AmolAmrit"
-export KBUILD_BUILD_HOST="Nightwing"
-export CROSS_COMPILE=/home/amol/pie/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-
+export KBUILD_BUILD_USER="some0nebad"
+export KBUILD_BUILD_HOST="WSL"
+export CROSS_COMPILE=/home/some0nebad/dev/gcc/gcc-linaro-6.5.0-2018.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-
 export ARCH="arm64"
 export USE_CCACHE=1
 
 echo -e "$green***********************************************"
-echo  "           Compiling Escrima Kernel                    "
+echo  "               Compiling someKernel                    "
 echo -e "***********************************************"
 
 # Finally build it
 make clean && make mrproper
 make lineageos_kenzo_defconfig
-make -j6
+make -j8
 
 echo -e "$yellow***********************************************"
 echo  "                 Zipping up                    "

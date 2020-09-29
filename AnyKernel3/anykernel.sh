@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=someKernel-X1
+kernel.string=someKernel-X1.1
 do.devicecheck=1
 do.modules=0
 do.systemless=1
